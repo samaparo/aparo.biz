@@ -16,10 +16,25 @@ body {
   margin-top: 0;
   margin-bottom: 6vh;
   opacity: 1;
-  transition: opacity cubic-bezier(0.39, 0.575, 0.565, 1) .2s;
+  position: relative;
+  top: 0;
+  transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) .5s;
 }
 
 .intro p.invisible {
-  opacity: 0;
+  opacity: 0.05;
+}
+
+@media(max-width: 375px) {
+  .intro {
+    padding: 5vh 5vw;
+    font-size: 8vw;
+  }
+  .intro p {
+    margin-bottom: 4vh;
+  }
+  .intro p.invisible {
+    opacity: 1;
+  }
 }
 
