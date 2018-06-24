@@ -2,6 +2,7 @@ body {
   background: #000;
   margin: 0;
   color: #FFF;
+  box-sizing: border-box;
 }
 
 .intro {
@@ -23,6 +24,30 @@ body {
 
 .intro p.invisible {
   opacity: 0.05;
+}
+
+.intro a {
+  color: white;
+  position: relative;
+}
+
+.intro a:hover {
+  animation: dance;
+  animation-direction: normal;
+  animation-duration: .2s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes dance {
+  0% { color: #2cfefd; left: 0px; top: -1px }
+  16% { color: #fb0e1b; left: -2px; top: 1px}
+  32% { color: #0b24fa; left: 1px; top: 2px}
+  58% { color: #29f92f; left: 3px; top: -1px}
+  60% { color: #fffd38; left: -1px; top: 3px}
+  74% { color: #fc28fb; left: -3px; top: 1px}
+  80% { color: #fffd38; left: 1px; top: 0px}
+  96% { color: #2cfefd; left: 3px; top: -2px}
 }
 
 @media(max-width: 375px) {
