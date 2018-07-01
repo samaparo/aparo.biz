@@ -39,6 +39,14 @@ body {
 
 }
 
+.intro .contact {
+  font-size: 2vw;
+}
+
+.intro a.nodance {
+  animation: none;
+}
+
 @keyframes dance {
   0% { color: #2cfefd; left: 0px; top: -1px }
   16% { color: #fb0e1b; left: -2px; top: 1px}
