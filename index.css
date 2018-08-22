@@ -19,6 +19,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #000;
   margin: 0;
@@ -79,16 +83,35 @@ body {
   96% { color: #2cfefd; left: 3px; top: -2px}
 }
 
-@media(max-width: 375px) {
+@media(max-width: 500px) {
   .intro {
-    padding: 5vh 5vw;
-    font-size: 8vw;
+    padding: 3vh 4vw;
+    font-size: 10vw;
   }
   .intro p {
     margin-bottom: 4vh;
   }
   .intro p.invisible {
     opacity: 1;
+  }
+  .intro .contact {
+    font-size: 8vw;
+  }
+}
+
+@media(max-width: 800px) {
+  .intro {
+    padding: 6vh 6vw;
+    font-size: 10vw;
+  }
+  .intro p {
+    margin-bottom: 4vh;
+  }
+  .intro p.invisible {
+    opacity: 1;
+  }
+  .intro .contact {
+    font-size: 8vw;
   }
 }
 
