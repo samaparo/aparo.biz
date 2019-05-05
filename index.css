@@ -97,13 +97,13 @@ body {
   color: #fff;
   box-sizing: border-box;
   font-family: Helvetica;
+  visibility: visible !important;
 }
 
 .intro {
   font-weight: bold;
   font-size: 6vw;
   padding: 10vh 10vw;
-  transition: all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
 }
 
 .intro p {
@@ -112,6 +112,9 @@ body {
   opacity: 1;
   position: relative;
   top: 0;
+}
+
+.fadeIn {
   transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.5s;
 }
 

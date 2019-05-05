@@ -1,11 +1,14 @@
-const scrollPage = ()=> {
+const scrollPage = () => {
   const pageHeight = window.outerHeight;
-  document.querySelectorAll(".invisible").forEach((invis) => {
-    if(pageHeight >= invis.getBoundingClientRect().top + (.1 * pageHeight)) {
+  document.querySelectorAll(".invisible").forEach(invis => {
+    invis.classList.add("fadeIn");
+    if (pageHeight >= invis.getBoundingClientRect().top + 0.1 * pageHeight) {
       invis.classList.toggle("invisible", false);
     }
   });
-}
+};
 
-window.addEventListener("scroll", scrollPage);
-scrollPage();
+window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("scroll", scrollPage);
+  scrollPage();
+});
