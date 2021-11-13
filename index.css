@@ -15,7 +15,7 @@ body {
 	box-sizing: border-box;
 	font-family: Helvetica;
 	visibility: visible !important;
-	--background-feel: cubic-bezier(.25, .1, .25, 1) .4s;
+	--background-feel: cubic-bezier(.25, .1, .25, 1) .3s;
 	transition: all var(--background-feel);
 }
 
@@ -80,8 +80,8 @@ body.razorfish .intro a {
 }
 
 .intro a:hover {
-	color: white !important;
-	background-color: #000 !important;
+	color: white;
+	background-color: #000;
 	box-shadow: 0 0 0 .5vw #000;
 }
 
@@ -94,6 +94,12 @@ body.razorfish .intro a {
 
 .intro .contact {
 	font-size: 2vw;
+}
+
+.intro .contact a:hover {
+	color: #000;
+	background-color: #fff;
+	box-shadow: 0 0 0 .5vw #fff;
 }
 
 .intro a.nodance {
