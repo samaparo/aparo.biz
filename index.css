@@ -1,228 +1,203 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
 * {
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
 }
 
 body {
-  background: #000;
-  margin: 0;
-  color: #fff;
-  box-sizing: border-box;
-  font-family: Helvetica;
-  visibility: visible !important;
+	background: #000;
+	margin: 0;
+	color: #fff;
+	box-sizing: border-box;
+	font-family: Helvetica;
+	visibility: visible !important;
+	--background-feel: cubic-bezier(.25, .1, .25, 1) .4s;
+	transition: all var(--background-feel);
+}
+
+body p::selection,
+body a::selection {
+	background: #fff;
+	color: #000;
+}
+
+body.mailchimp {
+	color: #000;
+	background-color: #ffe01b;
+}
+
+body.mailchimp .intro a {
+	color: #000;
+}
+
+body.yikyak {
+	color: #fff;
+	background-color: #0dd5b2;
+}
+body.yikyak .intro a {
+	color: #fff;
+}
+
+body.razorfish {
+	color: #fff;
+	background-color: #9743ff;
+}
+body.razorfish .intro a {
+	color: #fff;
 }
 
 .intro {
-  font-weight: bold;
-  font-size: 6vw;
-  padding: 10vh 10vw;
+	font-weight: bold;
+	font-size: 6vw;
+	padding: 10vh 10vw;
 }
 
 .intro p {
-  margin-top: 0;
-  margin-bottom: 6vh;
-  opacity: 1;
-  position: relative;
-  top: 0;
+	margin-top: 0;
+	margin-bottom: 6vh;
+	opacity: 1;
+	position: relative;
+	top: 0;
+	word-break: break-word;
 }
 
 .fadeIn {
-  transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.5s;
+	transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.5s;
 }
 
 .intro p.invisible {
-  opacity: 0.05;
+	opacity: 0.05;
 }
 
 .intro a {
-  color: white;
-  position: relative;
+	color: white;
+	position: relative;
+	transition: all var(--background-feel);
 }
 
 .intro a:hover {
-  animation: dance;
-  animation-direction: normal;
-  animation-duration: 0.2s;
-  animation-iteration-count: infinite;
+	color: white !important;
+	background-color: #000 !important;
+	box-shadow: 0 0 0 .5vw #000;
+}
+
+.intro a.dance:hover {
+	animation: dance;
+	animation-direction: normal;
+	animation-duration: 0.2s;
+	animation-iteration-count: infinite;
 }
 
 .intro .contact {
-  font-size: 2vw;
+	font-size: 2vw;
 }
 
 .intro a.nodance {
-  animation: none;
+	animation: none;
+}
+
+/* Disable animation and flashy colors if browser's reduce motion preference is on. */
+@media (prefers-reduced-motion) {
+	body {
+		background: #000 !important;
+		color: #fff !important;
+	}
+	body .intro a {
+		color: #fff !important;
+	}
+	body .intro a:hover {
+		box-shadow: none;
+	}
+	.intro p.invisible {
+		opacity: 1 !important;
+	}
 }
 
 @keyframes dance {
-  0% {
-    color: #2cfefd;
-    left: 0px;
-    top: -1px;
-  }
-  16% {
-    color: #fb0e1b;
-    left: -2px;
-    top: 1px;
-  }
-  32% {
-    color: #0b24fa;
-    left: 1px;
-    top: 2px;
-  }
-  58% {
-    color: #29f92f;
-    left: 3px;
-    top: -1px;
-  }
-  60% {
-    color: #fffd38;
-    left: -1px;
-    top: 3px;
-  }
-  74% {
-    color: #fc28fb;
-    left: -3px;
-    top: 1px;
-  }
-  80% {
-    color: #fffd38;
-    left: 1px;
-    top: 0px;
-  }
-  96% {
-    color: #2cfefd;
-    left: 3px;
-    top: -2px;
-  }
+	0% {
+		color: #2cfefd;
+		left: 0px;
+		top: -1px;
+	}
+	16% {
+		color: #fb0e1b;
+		left: -2px;
+		top: 1px;
+	}
+	32% {
+		color: #0b24fa;
+		left: 1px;
+		top: 2px;
+	}
+	58% {
+		color: #29f92f;
+		left: 3px;
+		top: -1px;
+	}
+	60% {
+		color: #fffd38;
+		left: -1px;
+		top: 3px;
+	}
+	74% {
+		color: #fc28fb;
+		left: -3px;
+		top: 1px;
+	}
+	80% {
+		color: #fffd38;
+		left: 1px;
+		top: 0px;
+	}
+	96% {
+		color: #2cfefd;
+		left: 3px;
+		top: -2px;
+	}
 }
 
 @media (max-width: 1024px) {
-  .intro {
-    padding: 6vh 6vw;
-    font-size: 6vh;
-  }
-  .intro p {
-    margin-bottom: 5vh;
-  }
-  .intro p.invisible {
-    opacity: 1;
-  }
-  .intro .contact {
-    font-size: 4vw;
-  }
+	.intro {
+		padding: 6vh 6vw;
+		font-size: 6vh;
+	}
+	.intro p {
+		margin-bottom: 5vh;
+	}
+	.intro p.invisible {
+		opacity: 1;
+	}
+	.intro .contact {
+		font-size: 4vw;
+	}
 
-  .intro .contact a {
-    width: 100%;
-    display: inline-block;
-    margin-bottom: 1vh;
-  }
+	.intro .contact a {
+		width: 100%;
+		display: inline-block;
+		margin-bottom: 1vh;
+	}
 
-  .intro .contact span {
-    display: none;
-  }
+	.intro .contact span {
+		display: none;
+	}
 }
 
 @media (max-width: 500px) {
-  .intro {
-    padding: 4vh 5vw;
-    font-size: 8vw;
-  }
-  .intro p {
-    margin-bottom: 4vh;
-  }
-  .intro p.invisible {
-    opacity: 1;
-  }
-  .intro .contact {
-    font-size: 6vw;
-  }
+	.intro {
+		padding: 4vh 5vw;
+		font-size: 8vw;
+	}
+	.intro p {
+		margin-bottom: 4vh;
+	}
+	.intro p.invisible {
+		opacity: 1;
+	}
+	.intro .contact {
+		font-size: 6vw;
+	}
 }
